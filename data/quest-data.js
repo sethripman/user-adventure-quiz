@@ -1,30 +1,30 @@
 // quests[0].choices[0].description; ==> 'negotiate with them'
+// Alcubierre Distillate, Heirs aboard, True Heirs aboard, Honor
+// discovery of a treasure fleet, the Traveling Saint in Search of Tombs has a guest, the Waif's True Nature is Revealed, the Grand Dragon Admiral seeks your Counsel, spice walkers fleeing a vacuum bubble catastrophe, - grand dragon admiral and spice walkers are stretch goals
 
-
-const monsters = {
-    id: 'monsters',
-    title: 'A Den of Monsters',
+const fleet = {
+    id: 'fleet',
+    title: 'Discovery of a Treasure Fleet Orbiting a Darkstar',
     map: {
         top: '89%',
         left: '44%'
     },
-    image: 'monsters.jpg',
-    audio: 'monsters.wav',
-    action: 'monster-scream.wav',
+    image: 'fleet.jpg',
+    audio: 'fleet.wav',
+    action: 'fleet-sound.wav',
     description: `
-        You enter the quest chamber only to be confronted by a hoard of
-        monsters. And they look hungry. What do you do?
+        As the Diamondclad crests a darkstar's event horizon and prepares to slingshot deeper into the Great Empty, a derelict Treasure Fleet drifts into view. Description of fleet. The Diamondclad's starforged engines can reach them through the shifting gravity fields, but it would be cheaper to the Diamondclad's store of distillate to continue along the original course. Already, the Alcubierre bubble is collapsing...
     `,
     choices: [{
-        id: 'negotiate',
-        description: 'Negotiate with them',
+        id: 'flee',
+        description: 'Leave them to the hungry Darkstar, and continue on your way',
         result: `
-            Knowing the monsters are not too bright, you offer to go buy them all
-            turkey dinners from the village pub. They give you 35 gold for meals
-            that will never be delivered. I hope you can live with yourself. 
+            Only a fool risks the living for the dead. A word to the Navigator, and the Diamondclad remains on its course and abandons the treasure fleet to the Darkstar's maw. As you accelerate and the stars slide past, the fleet twinkles and disappears like a coin dropped into murky water. The Saint of Sorrows rests a hand against the viewport and sighs, but the Traveling Saint is already laughing and talking excitedly about your next destination. That night, you lie awake, imagining the tribute that was so important to a planet that they sent it across the Great Empty, and yet so meaningless to your mission you could not spare a moment and a scrap of fuel to satisfy your curiosity. Or was it?
         `,
-        hp: 0,
-        gold: 35
+        distillate: +1,
+        honor: -1,
+        heirFound: 0,
+        trueHeirFound: 0,
     }, {
         id: 'fight',
         description: 'Fiiiiiggghhhttt!',
@@ -34,8 +34,10 @@ const monsters = {
             your vanquished foes. The bad news is you take 30 hp damage. The good news is you
             find 50 gold.
         `,
-        hp: -30,
-        gold: 50
+        distillate: +1,
+        honor: -1,
+        heirFound: 0,
+        trueHeirFound: 0,
     }, {
         id: 'run',
         description: 'Run away like good Sir Robin',
@@ -43,8 +45,10 @@ const monsters = {
             As you make a dash for the door a giant spider descends and take a bite of flesh,
             causing 50 hp damage.
         `,
-        hp: -50,
-        gold: 0
+        distillate: +1,
+        honor: -1,
+        heirFound: 0,
+        trueHeirFound: 0,
     }]
 };
 
@@ -73,8 +77,10 @@ const dragon = {
             Unluckily, you trip over a discarded wagon wheel on your
             way out of town and take 40 hp damage. 
         `,
-        hp: -35,
-        gold: 35
+        distillate: +1,
+        honor: -1,
+        heirFound: 0,
+        trueHeirFound: 0,
     }, {
         id: 'fight',
         description: 'Fiiiiiggghhhttt!',
@@ -84,8 +90,10 @@ const dragon = {
             village has been completely burned to the ground.
             Oh, and you take 45 hp damage.
         `,
-        hp: -45,
-        gold: 0
+        distillate: +1,
+        honor: -1,
+        heirFound: 0,
+        trueHeirFound: 0,
     }, {
         id: 'archer',
         description: 'Emulate that guy from LOR who shot an arrow',
@@ -98,8 +106,10 @@ const dragon = {
             killing the dragon instantly. The villagers declare you their hero
             and award you 90 gold.
         `,
-        hp: 0,
-        gold: 90
+        distillate: +1,
+        honor: -1,
+        heirFound: 0,
+        trueHeirFound: 0,
     }]
 };
 
@@ -124,23 +134,29 @@ const treasure = {
         id: 'wooden',
         description: 'A Wooden Chest',
         result: 'You grab 40 gold pieces!',
-        hp: 0,
-        gold: 40
+        distillate: +1,
+        honor: -1,
+        heirFound: 0,
+        trueHeirFound: 0,
     }, {
         id: 'golden',
         description: 'A Golden Chest',
         result: 'Oh no! The chest is booby trapped with poison and you take 50 hp damage',
-        hp: -50,
-        gold: 0
+        distillate: +1,
+        honor: -1,
+        heirFound: 0,
+        trueHeirFound: 0,
     }, {
         id: 'jeweled',
         description: 'A Jeweled Chest',
         result: 'A warm light engulfs you and you gain 35 hp',
-        hp: 35,
-        gold: 0
+        distillate: +1,
+        honor: -1,
+        heirFound: 0,
+        trueHeirFound: 0,
     }]
 };
 
-const quests = [monsters, treasure, dragon];
+const quests = [fleet, treasure, dragon];
 
 export default quests;
