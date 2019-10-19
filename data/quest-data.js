@@ -69,9 +69,9 @@ const saint = {
         trueHeirFound: 0,
     }, {
         id: 'vow',
-        description: '',
+        description: 'Vow secrecy.',
         result: `
-            
+            She tells you the truth, that she is the true Heir. The Traveling Saint confirms this. You will keep her secret and deliver her with the Waif.
         `,
         distillate: -1,
         honor: 2,
@@ -79,9 +79,9 @@ const saint = {
         trueHeirFound: 1,
     }, {
         id: 'leave',
-        description: '',
+        description: 'Insulted by the suggest, leave them to their meal',
         result: `
-            
+            How dare the Traveling Saint insinuate that you would forsake your holy mission so easily? You storm out and leave them to their sins. He chases after you and begs your forgiveness and silence, offering a shard of distillate to sweeten the apology. You know that the Diamondclad is hungry, and see no harm in keeping this event between the two of you.
         `,
         distillate: +1,
         honor: -1,
@@ -92,7 +92,7 @@ const saint = {
 
 const waif = {
     id: 'waif',
-    title: 'The Golden Treasure',
+    title: 'The Waif\'s True Nature Revealed',
     map: {
         top: '31%',
         left: '5%'
@@ -101,17 +101,13 @@ const waif = {
     audio: 'treasure-chests.wav',
     action: 'chest-opening.wav',
     description: `
-        As you enter the quest chamber you notice three chests before you.
-        Just as you start to imagine the wealth, you see a giant serpent
-        emerge from the back of the chamber. You'll need to make a run for it,
-        but you have time to open one chest before you take off. Which one 
-        do you choose?
+        You wake from nightmares of the Demon's Forest and decide to walk through the Gardens to still your thoughts. Under the branches of an ancient baobab, you find the Waif curled around a songscroll. You gently extract it from her sleeping metal hands, and scan the contents. What you discover written there horrifies you. She is no Heir, but instead a child who wandered too deep into the Demon's Forest and became transfigured by the evil there. She is now a demon of the ancient world. She is far less, and far more. She is an electronic soul trapped in a false body. She wakes to find you looking down at her, songscroll in hand. She falls silent. The fear in her eyes is genuine. You have a choice.
     `,
     choices: [{
         id: 'seal',
-        description: '',
+        description: 'The Waif cannot help her nature, but she is a danger to all if returned to Earth. Seal her mind away in a mirror prison, so that she can sleep your lifetime away.',
         result: `
-            
+            She comes willingly to the jailer's chamber. I will return, she says, and it will be the doom of you all. You cannot pass through my forest forever without bringing a piece of me back. If not me, someone else.
         `,
         distillate: -1,
         honor: +1,
